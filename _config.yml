@@ -4,14 +4,13 @@ description: >- # this means to ignore newlines until "baseurl:"
   Baby Motionsは、AIがスマホカメラで赤ちゃんのうつぶせ寝を検知し、
   SIDS(乳幼児突然死症候群)のリスクに備えるWebアプリです。
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://your-github-username.github.io" # your-github-username.github.io
-github_username: your-github-username
+url: "https://baby_motions.github.io" # your-github-username.github.io
+github_username: baby-feelings
 
 # Build settings
 theme: null
 plugins:
   - jekyll-feed
-  - jekyll-seo-tag
 
 # Exclude from processing.
 exclude:
