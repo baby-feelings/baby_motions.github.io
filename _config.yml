@@ -7,7 +7,7 @@ description: >- # this means to ignore newlines until "baseurl:"
 # Correct settings for a GitHub Project Page
 # https://<username>.github.io/<repository-name>
 url: "https://baby-feelings.github.io" # リポジトリ名を含まないドメイン部分
-baseurl: "/baby_motions.github.io"   # リポジトリ名をスラッシュから始める
+baseurl: "baby_motions.github.io"   # リポジトリ名をスラッシュから始める
 
 github_username: baby-feelings
 
