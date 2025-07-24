@@ -5,7 +5,6 @@ permalink: /contact/
 ---
 
 <div class="container mx-auto px-6 py-12 max-w-4xl">
-    <h1 class="text-3xl font-bold text-center mb-8">{{ page.title }}</h1>
     <div class="max-w-4xl mx-auto">
         <div class="text-center mb-12">
             <h1 class="text-3xl md:text-4xl font-bold">お問い合わせ</h1>
