@@ -1,0 +1,181 @@
+---
+layout: default
+---
+
+<main>
+    <section class="hero-bg py-16 md:py-24">
+        <div class="container mx-auto px-6 text-center">
+            <img src="https://firebasestorage.googleapis.com/v0/b/baby-motions.appspot.com/o/logo.png?alt=media&token=895b117b-996a-4950-9856-11b059632890" alt="Baby Motions ロゴ" class="h-20 w-20 md:h-24 md:w-24 mx-auto mb-5">
+            <h1 class="text-3xl md:text-5xl font-extrabold text-gray-800 mb-4 leading-tight">
+                赤ちゃんの<span class="brand-purple">うつぶせ寝</span>を<br class="md:hidden">見守ります
+            </h1>
+            <p class="text-base md:text-lg text-gray-600 max-w-2xl mx-auto mb-8">
+                Baby Motionsは、AIがスマホカメラで赤ちゃんのうつぶせ寝を検知し、SIDS(乳幼児突然死症候群)のリスクに備えるWebアプリです。
+            </p>
+            <a href="https://baby-motions.web.app" target="_blank" class="brand-purple-bg text-white font-bold py-3 px-8 rounded-full text-lg transition duration-300 ease-in-out transform hover:scale-105 shadow-lg">
+                無料で利用を開始
+            </a>
+            <p class="text-sm text-gray-500 mt-3">特別な機材もアプリのインストールも不要です</p>
+        </div>
+    </section>
+
+    <section id="features" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="section-title">Baby Motionsの主な機能</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="feature-card">
+                    <div class="feature-icon-bg">
+                        <i class="fa-solid fa-robot fa-2x"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">AIによる姿勢検知</h3>
+                    <p>
+                        古いスマホをカメラにすれば、AIが赤ちゃんの姿勢を自動で認識。「うつぶせ寝」の状態を検知します。
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon-bg">
+                        <i class="fa-solid fa-bell fa-2x"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">あんしん通知機能</h3>
+                    <p>
+                        うつぶせ寝が一定時間続くと、お手元のスマホに通知でお知らせ。赤ちゃんのもしもにすぐに気づけます。
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon-bg">
+                        <i class="fa-solid fa-mobile-screen-button fa-2x"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">かんたん設定</h3>
+                    <p>
+                        必要なのはスマホ2台だけ。Webブラウザでアクセスするだけですぐに始められます。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="how-to-use" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="section-title">たった5ステップ<br>ご利用手順</h2>
+            <div class="step-container">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3 class="text-xl font-bold text-gray-800">ブラウザで開く</h3>
+                    <p class="text-gray-600 mt-1 mb-6">まずはお手持ちのスマホで公式サイトにアクセスします。</p>
+                    {% include smartphone-frame.html image_src="https://googleusercontent.com/file_content/3" alt_text="ブラウザでアプリを開いた画面" %}
+                </div>
+                <i class="fa-solid fa-arrow-down fa-2x text-purple-300"></i>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3 class="text-xl font-bold text-gray-800">ホーム画面に追加</h3>
+                    <p class="text-gray-600 mt-1 mb-6">共有メニューから「ホーム画面に追加」を選びます。</p>
+                    {% include smartphone-frame.html image_src="https://googleusercontent.com/file_content/1" alt_text="ホーム画面に追加メニューの画像" %}
+                </div>
+                <i class="fa-solid fa-arrow-down fa-2x text-purple-300"></i>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3 class="text-xl font-bold text-gray-800">アプリを開く</h3>
+                    <p class="text-gray-600 mt-1 mb-6">ホーム画面に追加されたアイコンをタップして起動します。</p>
+                    {% include smartphone-frame.html image_src="https://googleusercontent.com/file_content/2" alt_text="ホーム画面に追加の確認画面" %}
+                </div>
+                <i class="fa-solid fa-arrow-down fa-2x text-purple-300"></i>
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <h3 class="text-xl font-bold text-gray-800">新規登録</h3>
+                    <p class="text-gray-600 mt-1 mb-6">メールアドレスとパスワードを設定して登録します。</p>
+                    {% include smartphone-frame.html image_src="https://googleusercontent.com/file_content/4" alt_text="新規登録画面" %}
+                </div>
+                <i class="fa-solid fa-arrow-down fa-2x text-purple-300"></i>
+                <div class="step-card">
+                    <div class="step-number">5</div>
+                    <h3 class="text-xl font-bold text-gray-800">モードを選択</h3>
+                    <p class="text-gray-600 mt-1 mb-6">スマホ2台でそれぞれのモードを選んだら、見守り開始です。</p>
+                    {% include smartphone-frame.html image_src="https://googleusercontent.com/file_content/5" alt_text="モード選択画面" %}
+                </div>
+            </div>
+        </section>
+    
+    <section id="sids-info" class="py-20">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <div class="bg-white rounded-2xl p-8 md:p-12 shadow-lg border border-purple-100">
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-800 text-center mb-6">SIDSと「うつぶせ寝」について</h2>
+                <p class="leading-relaxed mb-4">
+                    SIDS（乳幼児突然死症候群）は、元気だった赤ちゃんが眠っている間に突然亡くなってしまう、原因不明の病気です。
+                </p>
+                <p class="leading-relaxed">
+                    SIDSの発生リスクを高めるものの一つに「うつぶせ寝」があります。Baby Motionsは、睡眠中の赤ちゃんの姿勢を見守ることで、うつぶせ寝のリスクにいち早く気づくためのお手伝いをします。
+                </p>
+                <p class="text-gray-500 text-sm mt-6 text-center">
+                    ※本アプリはSIDSを予防するものではなく、医療機器ではありません。安全な睡眠環境を整えた上での補助としてご活用ください。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="py-20 bg-white">
+        <div class="container mx-auto px-6 max-w-3xl">
+            <h2 class="section-title">よくあるご質問</h2>
+            <div id="faq-accordion" class="bg-white rounded-2xl p-4">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>何があれば利用できますか？</span>
+                        <i class="fa-solid fa-chevron-down transform transition-transform"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p class="pt-2 pb-4">
+                            カメラ付きのスマートフォン2台（見守り用と保護者用）と、ご自宅のWi-Fiなど安定したインターネット接続環境があれば、すぐに始められます。
+                        </p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>料金はかかりますか？</span>
+                        <i class="fa-solid fa-chevron-down transform transition-transform"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p class="pt-2 pb-4">
+                            Baby Motionsの基本機能はすべて無料でご利用いただけます。子育て中のご家庭をサポートするため、基本的な見守り機能は将来も無料で提供し続ける予定です。
+                        </p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>どのように「うつぶせ寝」を検知しますか？</span>
+                         <i class="fa-solid fa-chevron-down transform transition-transform"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p class="pt-2 pb-4">
+                            見守り用スマホのカメラ映像をAIがリアルタイムで解析し、赤ちゃんの体の向きや姿勢から「うつぶせ寝」の状態を判断しています。映像が外部に保存されることはありませんのでご安心ください。
+                        </p>
+                    </div>
+                </div>
+                 <div class="faq-item">
+                    <button class="faq-question">
+                        <span>暗い部屋でも使えますか？</span>
+                         <i class="fa-solid fa-chevron-down transform transition-transform"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p class="pt-2 pb-4">
+                            はい。スマートフォンのカメラ性能にもよりますが、常夜灯などのわずかな明かりがあれば検知可能です。赤ちゃんの体がうっすらと見える程度の明るさを確保していただくことをお勧めします。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 hero-bg">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-extrabold text-gray-800 mb-4">
+                今日から始める、あんしんの見守り
+            </h2>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto mb-8">
+                使わなくなったスマホが、赤ちゃんの安全を見守るAIカメラに。
+                Baby Motionsで、毎日に少しの「あんしん」をプラスしませんか？
+            </p>
+            <a href="https://baby-motions.web.app" target="_blank" class="brand-purple-bg text-white font-bold py-4 px-10 rounded-full text-lg transition duration-300 ease-in-out transform hover:scale-105 shadow-lg">
+                今すぐ無料で試してみる
+            </a>
+        </div>
+    </section>
+</main>

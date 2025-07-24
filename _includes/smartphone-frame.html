@@ -1,0 +1,16 @@
+<div class="relative mx-auto border-gray-800 bg-gray-800 border-[12px] rounded-[2.5rem] h-[30rem] w-[15rem] shadow-xl">
+    <div class="w-[7rem] h-[1.125rem] bg-gray-800 top-0 rounded-b-[1rem] left-1/2 -translate-x-1/2 absolute"></div>
+    <div class="h-[2.5rem] w-[0.25rem] bg-gray-800 absolute -start-[15px] top-[4.5rem] rounded-s-lg"></div>
+    <div class="h-[2.5rem] w-[0.25rem] bg-gray-800 absolute -start-[15px] top-[7.8rem] rounded-s-lg"></div>
+    <div class="h-[4rem] w-[0.25rem] bg-gray-800 absolute -end-[15px] top-[9rem] rounded-e-lg"></div>
+    
+    <div class="rounded-[2rem] overflow-hidden w-full h-full bg-white">
+        {% if include.image_src %}
+            <img src="{{ include.image_src | relative_url }}" class="w-full h-full object-contain" alt="{{ include.alt_text }}">
+        {% else %}
+            <div class="w-full h-full flex items-center justify-center bg-gray-100 p-4">
+                {{ include.content }}
+            </div>
+        {% endif %}
+    </div>
+</div>

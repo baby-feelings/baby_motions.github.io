@@ -1,0 +1,107 @@
+body {
+    font-family: 'M PLUS Rounded 1c', 'Inter', sans-serif;
+    background-color: #FDF7FF; /* Very light lavender background */
+    color: #4A5568; /* Gray-700 */
+}
+html {
+    scroll-behavior: smooth;
+}
+.hero-bg {
+    background: linear-gradient(135deg, #F3E8FF 0%, #E9D8FD 100%);
+}
+.brand-purple {
+    color: #805AD5; /* Grape */
+}
+.brand-purple-bg {
+    background-color: #805AD5;
+}
+.brand-purple-bg:hover {
+    background-color: #6B46C1;
+}
+.section-title {
+    font-size: 2rem; /* 32px */
+    font-weight: 800;
+    color: #5a3e8a;
+    text-align: center;
+    margin-bottom: 4rem; /* 64px */
+    line-height: 1.6;
+}
+.feature-card {
+    background-color: white;
+    border-radius: 1.5rem; /* More rounded */
+    padding: 2rem;
+    box-shadow: 0 8px 25px -3px rgba(128, 90, 213, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+.feature-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px -5px rgba(128, 90, 213, 0.15);
+}
+.feature-icon-bg {
+    background-color: #F3E8FF;
+    color: #805AD5;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1.5rem;
+}
+.step-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+.step-card {
+    background-color: white;
+    border-radius: 1.5rem;
+    padding: 2rem 1.5rem;
+    box-shadow: 0 8px 25px -3px rgba(128, 90, 213, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+}
+.step-number {
+    background-color: #805AD5;
+    color: white;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    border: 4px solid #F3E8FF;
+}
+.faq-item {
+    border-bottom: 1px solid #E2E8F0;
+}
+.faq-item:last-child {
+    border-bottom: none;
+}
+.faq-question {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 1.5rem 0.5rem;
+    font-size: 1.125rem;
+    font-weight: 500;
+}
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out;
+    padding: 0 0.5rem;
+}
