@@ -1,0 +1,7 @@
+# CODESCAN（cyberattack_info_api、Issue #228）のSemgrepスキャンが、Jekyllの
+# Liquid テンプレート変数（{{ '/privacy/' | relative_url }} 等、テンプレート内に
+# 直書きされた静的な文字列リテラル。ユーザー入力が混入する経路は無い静的サイト）を
+# 汎用ルール（generic.html-templates.security.var-in-href）で誤検知するため除外する。
+
+_includes/header.html
+_includes/footer.html
