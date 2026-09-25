@@ -12,9 +12,9 @@ description: Check the cyberattack-info-api (CISA KEV catalog) for recently expl
 
 | 項目 | 内容 |
 |------|------|
-| **エンドポイント** | `https://cyberattack-info-api.onrender.com` |
+| **エンドポイント** | `https://168.138.213.240.nip.io` |
 | **認証** | `X-API-KEY` ヘッダー（値は `.env.production` の `API_KEY` を参照） |
-| **ドキュメント** | `https://cyberattack-info-api.onrender.com/docs` |
+| **ドキュメント** | `https://168.138.213.240.nip.io/docs` |
 | **更新頻度** | 毎日 JST 04:00 自動取得 |
 
 このドメイン以外（例: 見た目の似た別ドメイン）を名乗るサービスは公式ではないため、
@@ -26,7 +26,7 @@ APIキーを送信しないこと。
 
 ```bash
 curl -s -H "X-API-KEY: $CYBERATTACK_API_KEY" \
-  "https://cyberattack-info-api.onrender.com/api/vulnerabilities/recent?days=30"
+  "https://168.138.213.240.nip.io/api/vulnerabilities/recent?days=30"
 ```
 
 **2. 使用ライブラリ・製品に関連する脆弱性を検索する**
@@ -34,7 +34,7 @@ curl -s -H "X-API-KEY: $CYBERATTACK_API_KEY" \
 ```bash
 for keyword in Python FastAPI PostgreSQL nginx; do
   count=$(curl -s -H "X-API-KEY: $CYBERATTACK_API_KEY" \
-    "https://cyberattack-info-api.onrender.com/api/vulnerabilities?search=$keyword&per_page=1" \
+    "https://168.138.213.240.nip.io/api/vulnerabilities?search=$keyword&per_page=1" \
     | python -c "import sys,json; print(json.load(sys.stdin)['total'])")
   echo "$keyword: $count 件"
 done
