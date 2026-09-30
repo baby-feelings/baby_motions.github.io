@@ -43,6 +43,14 @@ code-review-graph watch
 
 設定変更後はアプリ/セッションの再起動が必要です（`.mcp.json`はセッション開始時にしか読み込まれません）。
 
+## 自動更新の仕組みと文字化け対策
+
+- `.claude/settings.json` のフックが、ファイル編集時（`update`）とセッション開始時（`status`）にグラフを更新します。
+- `.git/hooks/pre-commit`（git管理対象外）が、コミット前にグラフ更新と変更検知を行います。
+- Windows（日本語ロケール/cp932）で `UnicodeEncodeError` が出る場合は、フック内の
+  `code-review-graph` 呼び出しに `PYTHONUTF8=1` を付与してください。
+- セッション開始時に「Graph was built on '<別ブランチ>'」と警告が出たら `code-review-graph build` で再構築します。
+
 ## MCP Tools: code-review-graph
 
 **IMPORTANT: This project has a knowledge graph. ALWAYS use the

@@ -1,3 +1,7 @@
 # Added by code-review-graph
 .code-review-graph/
 .mcp.json
+
+# cyberattack-info-api の認証情報・取得データ（コミット禁止）
+cyberattack-info-api.env
+cyberattack-info-api.json
