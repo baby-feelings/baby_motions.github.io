@@ -7,7 +7,7 @@ AI がスマホカメラで赤ちゃんのうつぶせ寝を検知し、SIDS（�
 
 ## 技術スタック
 
-- [Jekyll](https://jekyllrb.com/)（[GitHub Pages](https://pages.github.com/) 標準環境）
+- [Jekyll](https://jekyllrb.com/)（[GitHub Pages](https://pages.github.com/) 標準環境、`github-pages` gem v232）
 - Ruby / Bundler
 
 ## セットアップ
@@ -31,18 +31,48 @@ bundle exec jekyll serve
 ├── index.html        # トップページ
 ├── contact.md        # お問い合わせページ
 ├── privacy.md        # プライバシーポリシー
-└── terms.md          # 利用規約
+├── terms.md          # 利用規約
+├── Gemfile(.lock)    # 依存ライブラリ
+├── .github/          # Dependabot 設定
+├── .semgrepignore    # Semgrep の誤検知除外（Liquidテンプレート）
+├── CLAUDE.md         # 開発方針（Claude Code 向け）
+└── .claude/skills/   # Claude Code 用スキル（詳細手順）
 ```
 
 ## デプロイ
 
-`main` ブランチへの merge をもって GitHub Pages に自動デプロイされます。
+GitHub Pages が `main` ブランチ（ルート）から自動でビルド・公開します。
+`main` へのマージがそのまま本番反映になるため、変更は必ず Pull Request 経由で行ってください。
 
-## 開発ルール
+## 開発の進め方
 
-開発方針・ブランチ運用・コミットメッセージ規約などの詳細は [CLAUDE.md](CLAUDE.md) を参照してください。
+1. `main` を最新にして、`<prefix>/<short-description>` 形式のブランチを作成
+2. 変更をコミット（`feat:` `fix:` `docs:` `refactor:` `test:` `chore:`）
+3. Pull Request を作成し、確認後に `main` へマージ
+4. `main` を pull
+
+詳細な開発方針は [CLAUDE.md](CLAUDE.md) を参照してください。
 
 ## 依存関係の管理
 
 - [Dependabot](.github/dependabot.yml) が `Gemfile` の依存関係を週次でチェックします。
-- このリポジトリには [code-review-graph](https://github.com/tirth8205/code-review-graph) を導入しています。セットアップ手順は [CLAUDE.md](CLAUDE.md) を参照してください。
+- `github-pages` gem が依存ライブラリのバージョンを固定しているため、
+  更新は `Gemfile.lock` 内で制約に収まる範囲に限られます（1ライブラリ = 1PR）。
+
+## Claude Code スキル
+
+`.claude/skills/` に、必要なときだけ読み込まれる手順書があります。
+
+| スキル | 用途 |
+|--------|------|
+| `code-review-graph-setup` | [code-review-graph](https://github.com/tirth8205/code-review-graph) のセットアップと使い方 |
+| `security-check` | 開発前の脅威情報（サイバー攻撃情報API）の確認 |
+| `explore-codebase` / `debug-issue` / `review-changes` / `refactor-safely` | グラフを使った探索・調査・レビュー・リファクタリング |
+
+## ローカル専用ファイル（コミットしない）
+
+以下は `.gitignore` 対象です。`git add .` は使わず、ファイルを指定してステージしてください。
+
+- `.mcp.json`（環境依存の絶対パスを含む。`code-review-graph install --platform claude-code -y` で各自生成）
+- `.code-review-graph/`（グラフDB）
+- `cyberattack-info-api.env` / `cyberattack-info-api.json`（APIキー・取得データ）

@@ -7,9 +7,18 @@
 
 ## (重要)最初にやること
 このリポジトリには [code-review-graph](https://github.com/tirth8205/code-review-graph) を導入済みです。
-セットアップ手順（install/build/watch、Windowsの接続タイムアウト対策）と
-MCPツールの使い分けは `code-review-graph-setup` スキル
-（`.claude/skills/code-review-graph-setup/SKILL.md`）を参照してください。
+コード探索・レビューではGrep/Globより先にグラフのMCPツールを使ってください。
+
+詳細な手順は `.claude/skills/` のスキルにあります（必要なときだけ読み込まれます）。
+
+| スキル | 用途 |
+|--------|------|
+| `code-review-graph-setup` | install/build/watch、Windowsの接続タイムアウト対策、MCPツールの使い分け |
+| `security-check` | 開発前の脅威情報（サイバー攻撃情報API）の確認と反映 |
+| `explore-codebase` | グラフを使ったコードベース理解 |
+| `debug-issue` | グラフを使ったバグ調査 |
+| `review-changes` | 変更のリスク分析付きレビュー |
+| `refactor-safely` | 依存関係分析に基づく安全なリファクタリング |
 
 ## 開発方針（設計原則）
 以下の原則に則って設計・実装を行います。
@@ -35,14 +44,10 @@ MCPツールの使い分けは `code-review-graph-setup` スキル
 - 開発環境用と本番環境用の 2 つを作成してください。
 - テスト用コードも作成してください。
 
-## CI/CD（GitHub Actions）
-GitHub Actions を活用し、以下のフローを一気通貫で行います。
-
-- Pull Request 作成
-- 自動テスト・静的解析
-- レビュー
-- Merge
-- （必要に応じて）デプロイ
+## CI/CD
+- 公開は GitHub Pages（`main` ブランチ、legacyビルド）。`main` へのマージで反映されます。
+- 現状 `.github/workflows` は未整備です。依存関係の更新は Dependabot（bundler・週次）が担当します。
+- 自動テスト・静的解析を追加する場合は GitHub Actions で「PR作成 → テスト・静的解析 → レビュー → Merge」を一気通貫にしてください。
 
 ## リファクタリング方針
 ### リファクタリングの基本方針
@@ -51,21 +56,18 @@ GitHub Actions を活用し、以下のフローを一気通貫で行います�
 - 内部構造・設計・可読性・保守性を改善してください。
 
 ## 開発手順
+毎回の作業の冒頭で、`main` を最新にしてからブランチを切ります。
 
 ```bash
-# 1. feature ブランチを作成
-git checkout -b feature/your-feature-name
-
-# 2. コードを変更・コミット
-git add <files>
-git commit -m "feat: 機能の説明"
-
-# 3. プッシュして PR を作成
-git push -u origin feature/your-feature-name
-# → GitHub 上で Pull Request を作成
-
-# 4. CI（型チェック・ビルド・テスト）が通ったら main へマージ
+git checkout main && git pull origin main
+git checkout -b <prefix>/<short-description>   # 例: docs/update-readme
+git add <files> && git commit -m "<prefix>: 変更内容"
+git push -u origin <prefix>/<short-description>
+# → Pull Request を作成し、確認後 main へマージ → main を pull
 ```
+
+ブランチのプレフィックスはコミットメッセージ規約と同じです（`feat/` `fix/` `docs/` `refactor/` `test/` `chore/`）。
+1つのPRでは1つの目的だけを扱います（例: 依存ライブラリの更新は1ライブラリ = 1PR）。
 
 ## コミットメッセージ規約
 
@@ -82,7 +84,8 @@ git push -u origin feature/your-feature-name
 
 ## セキュリティ情報の活用（必須）
 
-開発・実装・レビューの前には必ず `security-check` スキル
-（`.claude/skills/security-check/SKILL.md`）に従い、「サイバー攻撃情報 API」
-（CISA KEVカタログ）から最新の脅威情報を取得し、依存ライブラリ・実装パターン・
-テスト・レビューに反映してください。
+開発・実装・レビュー・依存ライブラリ更新の前には `security-check` スキルに従い、
+「サイバー攻撃情報 API」（CISA KEVカタログ）の最新の脅威情報を確認して反映してください。
+
+- APIキーを含む `cyberattack-info-api.env` / `cyberattack-info-api.json` は `.gitignore` 対象です。コミット・共有しないでください。
+- `.env` / `.mcp.json` などローカル専用ファイルを `git add .` で誤ってステージしないよう、ファイル名を指定してステージしてください。

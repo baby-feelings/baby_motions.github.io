@@ -13,7 +13,7 @@ description: Check the cyberattack-info-api (CISA KEV catalog) for recently expl
 | 項目 | 内容 |
 |------|------|
 | **エンドポイント** | `https://168.138.213.240.nip.io` |
-| **認証** | `X-API-KEY` ヘッダー（値は `.env.production` の `API_KEY` を参照） |
+| **認証** | `X-API-KEY` ヘッダー（値はローカルの `cyberattack-info-api.env` の `API_KEY`。`.gitignore` 対象、コミット・共有禁止） |
 | **ドキュメント** | `https://168.138.213.240.nip.io/docs` |
 | **更新頻度** | 毎日 JST 04:00 自動取得 |
 
@@ -29,10 +29,10 @@ curl -s -H "X-API-KEY: $CYBERATTACK_API_KEY" \
   "https://168.138.213.240.nip.io/api/vulnerabilities/recent?days=30"
 ```
 
-**2. 使用ライブラリ・製品に関連する脆弱性を検索する**
+**2. 使用ライブラリ・製品に関連する脆弱性を検索する**（本プロジェクトは Ruby / Jekyll / GitHub Pages）
 
 ```bash
-for keyword in Python FastAPI PostgreSQL nginx; do
+for keyword in Ruby Jekyll nokogiri rexml Bundler; do
   count=$(curl -s -H "X-API-KEY: $CYBERATTACK_API_KEY" \
     "https://168.138.213.240.nip.io/api/vulnerabilities?search=$keyword&per_page=1" \
     | python -c "import sys,json; print(json.load(sys.stdin)['total'])")
@@ -41,6 +41,7 @@ done
 ```
 
 PowerShellの場合は `Invoke-RestMethod -Uri "..." -Headers @{ "X-API-KEY" = $env:CYBERATTACK_API_KEY }` を使用してください。
+キーワード検索は部分一致のため、`ffi` が Microsoft Office の CVE に誤ヒットするように無関係な製品が混ざります。件数だけでなく内容を確認してください。
 
 ## 取得した情報の開発への活かし方
 
