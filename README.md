@@ -1,5 +1,7 @@
 # Baby Motions
 
+[![License: AGPL v3](https://img.shields.io/badge/License-AGPL_v3-blue.svg)](LICENSE)
+
 うつぶせ寝を検知し、赤ちゃんのもしもに備える Web アプリ「Baby Motions」の紹介サイトです。
 AI がスマホカメラで赤ちゃんのうつぶせ寝を検知し、SIDS（乳幼児突然死症候群）のリスクに備えることを目的としています。
 
