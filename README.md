@@ -79,7 +79,6 @@ GitHub Pages が `main` ブランチ（ルート）から自動でビルド・�
 - `.code-review-graph/`（グラフDB）
 - `cyberattack-info-api.env` / `cyberattack-info-api.json`（APIキー・取得データ）
 
-
 ## ライセンス
 
 [GNU Affero General Public License v3.0（AGPL-3.0）](LICENSE)
