@@ -1,5 +1,7 @@
 # Baby Motions
 
+[![License: AGPL v3](https://img.shields.io/badge/License-AGPL_v3-blue.svg)](LICENSE)
+
 うつぶせ寝を検知し、赤ちゃんのもしもに備える Web アプリ「Baby Motions」の紹介サイトです。
 AI がスマホカメラで赤ちゃんのうつぶせ寝を検知し、SIDS（乳幼児突然死症候群）のリスクに備えることを目的としています。
 
@@ -76,3 +78,10 @@ GitHub Pages が `main` ブランチ（ルート）から自動でビルド・�
 - `.mcp.json`（環境依存の絶対パスを含む。`code-review-graph install --platform claude-code -y` で各自生成）
 - `.code-review-graph/`（グラフDB）
 - `cyberattack-info-api.env` / `cyberattack-info-api.json`（APIキー・取得データ）
+
+
+## ライセンス
+
+[GNU Affero General Public License v3.0（AGPL-3.0）](LICENSE)
+
+AGPL-3.0 は、コードを改変してネットワーク経由で提供する場合（サーバー型サービスとしての利用を含む）も、改変後のソースコードを利用者に公開する義務を課す強めのコピーレフトライセンスです。無断でコードをコピーして非公開の競合サービスとして運営することを防ぐ目的で選択しています。個人利用・学習目的の閲覧・フォークは自由ですが、本コードを基にしたサービスを公開する場合はソースコードの公開が必要です。商用利用や別ライセンスでの利用を希望する場合は個別にご相談ください。
