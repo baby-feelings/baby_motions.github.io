@@ -45,7 +45,7 @@
 - テスト用コードも作成してください。
 
 ## CI/CD
-- 公開は GitHub Pages（`main` ブランチ、legacyビルド）。`main` へのマージで反映されます。
+- GitHub Pages は2026-10より**停止中**（サイトは非公開）。再公開時は Settings → Pages で `main` / `/ (root)` を指定します（legacyビルド）。再公開後は `main` へのマージで反映されます。
 - 現状 `.github/workflows` は未整備です。依存関係の更新は Dependabot（bundler・週次）が担当します。
 - 自動テスト・静的解析を追加する場合は GitHub Actions で「PR作成 → テスト・静的解析 → レビュー → Merge」を一気通貫にしてください。
 
