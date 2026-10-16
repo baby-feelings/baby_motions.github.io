@@ -5,7 +5,7 @@
 うつぶせ寝を検知し、赤ちゃんのもしもに備える Web アプリ「Baby Motions」の紹介サイトです。
 AI がスマホカメラで赤ちゃんのうつぶせ寝を検知し、SIDS（乳幼児突然死症候群）のリスクに備えることを目的としています。
 
-- **公開URL**: https://baby-feelings.github.io/baby_motions.github.io/
+- **公開状況**: 2026-10 より GitHub Pages サイトは**非公開（停止中）**です（旧URL: https://baby-feelings.github.io/baby_motions.github.io/ は 404）。
 
 ## 技術スタック
 
@@ -43,8 +43,9 @@ bundle exec jekyll serve
 
 ## デプロイ
 
-GitHub Pages が `main` ブランチ（ルート）から自動でビルド・公開します。
-`main` へのマージがそのまま本番反映になるため、変更は必ず Pull Request 経由で行ってください。
+GitHub Pages は現在**停止中**のため、`main` へマージしてもサイトは公開されません。
+再公開するには、リポジトリの Settings → Pages で Source を `main` / `/ (root)` に設定します。
+再公開後は `main` へのマージがそのまま本番反映になるため、変更は必ず Pull Request 経由で行ってください。
 
 ## 開発の進め方
 
